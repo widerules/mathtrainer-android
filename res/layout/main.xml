@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    		  android:orientation="vertical"
+    		  android:layout_width="fill_parent"
+    		  android:layout_height="fill_parent" >
+	
+	<ImageView android:id="@+id/titleImage" 
+			   android:layout_width="wrap_content" 
+			   android:layout_height="wrap_content"
+			   android:layout_gravity="center"
+			   android:layout_weight="2" 
+			   android:src="@drawable/logo" />
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    		  android:orientation="vertical"
+    		  android:layout_width="fill_parent"
+    		  android:layout_height="wrap_content" 
+    		  android:layout_weight="1" >
+    		  
+		<TextView android:text="Difficulty:" 
+				  android:id="@+id/difficultyLabel" 
+				  android:layout_width="wrap_content" 
+				  android:layout_height="wrap_content" 
+				  android:paddingLeft="10px" />
+		
+		<RadioGroup android:id="@+id/difficultyOption" 
+					android:layout_width="fill_parent" 
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:paddingLeft="25px">
+			
+			<RadioButton android:text="Easy" 
+						 android:id="@+id/easyChoice" 
+						 android:layout_width="wrap_content" 
+						 android:layout_height="wrap_content"
+						 android:paddingRight="25px"/>
+			
+			<RadioButton android:text="Hard" 
+						 android:id="@+id/hardChoice" 
+						 android:layout_width="wrap_content" 
+						 android:layout_height="wrap_content"/>
+						 
+		</RadioGroup>
+	
+	</LinearLayout>
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    		  android:orientation="vertical"
+    		  android:layout_width="fill_parent"
+    		  android:layout_height="wrap_content" 
+    		  android:layout_weight="1" >
+    		  
+		<TextView android:text="Number of operations:" 
+				  android:id="@+id/operationNumLabel" 
+				  android:layout_width="wrap_content" 
+				  android:layout_height="wrap_content" 
+				  android:paddingLeft="10px" />
+		
+		<RadioGroup android:id="@+id/lengthOption" 
+					android:layout_width="fill_parent" 
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:paddingLeft="25px">
+			
+			<RadioButton android:text="20" 
+						 android:id="@+id/_20" 
+						 android:layout_width="wrap_content" 
+						 android:layout_height="wrap_content"/>
+			
+			<RadioButton android:text="50" 
+						 android:id="@+id/_50" 
+						 android:layout_width="wrap_content" 
+						 android:layout_height="wrap_content"/>
+						
+			<RadioButton android:text="100" 
+						 android:id="@+id/_100" 
+						 android:layout_width="wrap_content" 
+						 android:layout_height="wrap_content"/>
+						 
+		</RadioGroup>
+		
+	</LinearLayout>
+	
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    		  android:orientation="vertical"
+    		  android:layout_width="fill_parent"
+    		  android:layout_height="wrap_content" 
+    		  android:layout_weight="1" >
+	
+		<Button android:text="Start!" 
+		 		android:id="@+id/startButton" 
+		 		android:layout_width="fill_parent" 
+		 		android:layout_height="wrap_content" />
+	 		
+	</LinearLayout>
+	 		
+</LinearLayout>

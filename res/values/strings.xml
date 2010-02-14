@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, MathTrainer!</string>
+    <string name="app_name">Math Trainer</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="menu_new_game">New Game</string>
+    <string name="menu_high_scores">High Scores</string>
+    <string name="menu_quit_game">Quit Game</string>
+    <string name="dialog_confirm_exit_message">Are you sure you want to quit MathTrainer?</string>
+</resources>
