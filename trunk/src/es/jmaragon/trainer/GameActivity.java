@@ -19,6 +19,8 @@ public class GameActivity extends Activity {
 	private static final int DIVISION = 3;
 	
 	private Intent triggerIntent;
+	private Intent resultsIntent;
+	private Bundle results;
 	
 	private TextView operationText;
 	private Button rightButton;
@@ -35,10 +37,15 @@ public class GameActivity extends Activity {
 	private int opCounter = 0;
 	
 	private int correctAnswers = 0;
+	private long startTime;
+	private long endTime;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        resultsIntent = new Intent(GameActivity.this, ResultsActivity.class);
+        results = new Bundle();
         
         this.setContentView(R.layout.game);
         operationText = (TextView)findViewById(R.id.operationText);
@@ -76,7 +83,8 @@ public class GameActivity extends Activity {
 				}
 				
 				if (++opCounter == numOperations) {
-					operationText.setText(correctAnswers + "");
+					// End has been reached
+					GameActivity.this.finishGame();
 				}
 				else {
 					operationText.setText((String)opStrs[opCounter]);
@@ -93,7 +101,8 @@ public class GameActivity extends Activity {
 				}
 				
 				if (++opCounter == numOperations) {
-					operationText.setText(correctAnswers + "");
+					// End has been reached
+					GameActivity.this.finishGame();
 				}
 				else {
 					operationText.setText((String)opStrs[opCounter]);
@@ -101,7 +110,11 @@ public class GameActivity extends Activity {
 			}
 		});
         
+        // Display the first operation
         operationText.setText((String)opStrs[0]);
+       
+        // Make a note of the start time
+        startTime = System.currentTimeMillis();
     }
 		
 	private Map<String, Boolean> generateOperations() {
@@ -121,7 +134,7 @@ public class GameActivity extends Activity {
 	}
 	
 	private String buildOperationString(int op1, int op2, int operator, boolean correct) {
-		StringBuffer opStr = new StringBuffer();
+		StringBuilder opStr = new StringBuilder();
 		String operatorStr = null;
 		int realResult = 0;
 		int result = 0;
@@ -162,6 +175,22 @@ public class GameActivity extends Activity {
 		 	 .append(result);
 		
 		return opStr.toString();
+	}
+	
+	private void finishGame() {
+		// Make a note of the end time
+		endTime = System.currentTimeMillis();
+		
+		// Place the results in the Bundle
+		this.results.putInt("numOperations", this.numOperations);
+		this.results.putInt("correctAnswers", this.correctAnswers);
+		this.results.putLong("timeTaken", this.endTime - this.startTime);
+		
+		this.finish();
+		
+		// Call the results activity
+		this.resultsIntent.putExtra("results", results);
+		this.startActivity(this.resultsIntent);
 	}
 	
 }

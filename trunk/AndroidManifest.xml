@@ -13,6 +13,8 @@
         </activity>
     	<activity android:name=".GameActivity">
 		</activity>
+		<activity android:name=".ResultsActivity">
+		</activity>
 </application>
     <uses-sdk android:minSdkVersion="2" />
 </manifest> 

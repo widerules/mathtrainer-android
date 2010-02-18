@@ -107,6 +107,7 @@ public class MathTrainer extends Activity {
 		switch (item.getItemId()) {
 		case MENU_NEW_GAME:
 			this.newGameIntent = new Intent(this, GameActivity.class);
+			this.newGameIntent.putExtra("newGameOptions", newGameOptions);
 			this.startActivity(newGameIntent);
 			return true;
 		case MENU_HIGH_SCORES:
