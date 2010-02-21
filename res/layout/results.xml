@@ -8,7 +8,7 @@
 			   android:layout_width="wrap_content" 
 			   android:layout_height="wrap_content"
 			   android:layout_gravity="center"
-			   android:layout_weight="2" 
+			   android:layout_weight="1" 
 			   android:src="@drawable/logo" />
 	
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -21,12 +21,14 @@
 				  android:id="@+id/correctAnswersLabel" 
 				  android:layout_width="wrap_content" 
 				  android:layout_height="wrap_content" 
-				  android:paddingLeft="10px" />
+				  android:layout_gravity="center"
+				  style="@style/ResultLabelText" />
 				  
 		<TextView android:id="@+id/correctAnswersText" 
 				  android:layout_width="wrap_content" 
 				  android:layout_height="wrap_content" 
-				  android:paddingLeft="10px" />
+				  android:layout_gravity="center"
+				  style="@style/ResultText" />
 	
 	</LinearLayout>
 	
@@ -40,17 +42,69 @@
 				  android:id="@+id/timeTakenLabel" 
 				  android:layout_width="wrap_content" 
 				  android:layout_height="wrap_content" 
-				  android:paddingLeft="10px" />
+				  android:layout_gravity="center"
+				  style="@style/ResultLabelText" />
 				  
 		<TextView android:id="@+id/timeTakenText" 
 				  android:layout_width="wrap_content" 
 				  android:layout_height="wrap_content" 
-				  android:paddingLeft="10px" />
+				  android:layout_gravity="center"
+				  style="@style/ResultText" />
+				  
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    		  android:orientation="vertical"
+    		  android:layout_width="fill_parent"
+    		  android:layout_height="wrap_content" 
+    		  android:layout_weight="1"
+    		  android:paddingTop="25px" 
+    		  android:paddingBottom="25px">
+    		  
+    		  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    		  android:orientation="horizontal"
+	    		  android:layout_width="fill_parent"
+	    		  android:layout_height="wrap_content" 
+	    		  android:layout_weight="1" >
+	    		  
+	    		<TextView android:text="Actual time:" 
+			  		android:id="@+id/realTimeTakenLabel" 
+			  		android:layout_width="wrap_content" 
+			  		android:layout_height="wrap_content" 
+			  		android:paddingLeft="10px" />
+					  
+				<TextView android:text="Actual time:" 
+					android:id="@+id/realTimeTakenText" 
+				  	android:layout_width="wrap_content" 
+				  	android:layout_height="wrap_content" 
+				  	android:paddingLeft="10px" />
+	    		  
+    		  </LinearLayout>
+    		  
+    		  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    		  android:orientation="horizontal"
+	    		  android:layout_width="fill_parent"
+	    		  android:layout_height="wrap_content" 
+	    		  android:layout_weight="1" >
+	    		  
+	    		<TextView android:text="Penalty:" 
+			  		android:id="@+id/penaltyLabel" 
+			  		android:layout_width="wrap_content" 
+			  		android:layout_height="wrap_content" 
+			  		android:paddingLeft="10px" />
+					  
+				<TextView android:text="Actual time:" 
+					android:id="@+id/penaltyText" 
+				  	android:layout_width="wrap_content" 
+				  	android:layout_height="wrap_content" 
+				  	android:paddingLeft="10px" />
+				  	
+    		  </LinearLayout>
+    		  
+    	</LinearLayout>
 	
 	</LinearLayout>
 	
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    		  android:orientation="vertical"
+    		  android:orientation="horizontal"
     		  android:layout_width="fill_parent"
     		  android:layout_height="wrap_content" 
     		  android:layout_weight="1" >
@@ -58,7 +112,14 @@
 		<Button android:text="OK" 
 		 		android:id="@+id/okButton" 
 		 		android:layout_width="fill_parent" 
-		 		android:layout_height="wrap_content" />
+		 		android:layout_height="wrap_content"
+		 		android:layout_weight="1" />
+		 		
+		<Button android:text="High Scores" 
+		 		android:id="@+id/scoresButton" 
+		 		android:layout_width="fill_parent" 
+		 		android:layout_height="wrap_content"
+		 		android:layout_weight="1" />
 	 		
 	</LinearLayout>
 
